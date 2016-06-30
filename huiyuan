@@ -1,0 +1,65 @@
+#include "stdafx.h"
+#include <stdio.h>
+#include <string>
+#include <iostream>
+#include <fstream>
+using namespace std;
+class huiyuan
+{
+public:
+	huiyuan();
+	~huiyuan();
+	int hui_(int n);
+	int jifen_(int n);
+	int gaijifen_(int n, int b);
+
+	
+private:
+	int  man[10];
+	int hui[10];
+	int jifen[10];
+};
+
+
+huiyuan::huiyuan()
+{
+	ifstream fin("E:\\huiyuan.txt", ios::in);
+	for (int j = 0; j < 10; j++){
+		fin >> man[j] >> hui[j] >> jifen[j];
+	}
+}
+
+huiyuan::~huiyuan()
+{
+}
+
+int huiyuan::hui_(int n){
+	for (int j = 0; j < 10; j++){
+		if (man[j] == n){
+			return hui[j];
+		}
+		
+	}
+	return -1;
+}
+
+int huiyuan::jifen_(int n){
+	for (int j = 0; j < 10; j++){
+		if (man[j] == n)
+		{
+			return jifen[j];
+		}
+	}
+	return -1;
+}
+int huiyuan::gaijifen_(int n, int b){
+
+	ofstream ou("E:\\huiyuan.txt", ios::out);
+	for (int j = 0; j < 10; j++){
+		if (man[j] == n)
+			jifen[j] = jifen[j] + b;
+		ou << man[j] << " " << hui[j] << " " << jifen[j] << endl;
+	}
+	
+	return 0;
+}
