@@ -34,7 +34,7 @@ private:
 	string name[10];
 	double  price[10];
 	double discount[10];
-	int promotion[10];
+	int promotion[11];
 	
 };
 int seqlist::locate(int x, int &Apromotion){
