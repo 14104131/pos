@@ -33,7 +33,7 @@ public:
 private:
 	string name[10];
 	double  price[10];
-	double discount[10];
+	double discount[11];
 	int promotion[11];
 	
 };
